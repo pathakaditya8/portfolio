@@ -1,0 +1,129 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>Aditya Pathak | Portfolio</title> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <style> :root { --bg-light: #f4f9f9; --bg-dark: #0a192f; --text-light: #333; --text-dark: #d0d8e4; --accent: #007bff; --card-bg-light: #ffffff; --card-bg-dark: #112240; }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+header {
+  background-color: var(--bg-dark);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  animation: slideInFromTop 1s ease-out;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #d0d8e4;
+  animation: fadeIn 2s ease-in;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #0056b3;
+}
+
+section {
+  padding: 2rem;
+  max-width: 960px;
+  margin: auto;
+}
+
+h2 {
+  color: var(--accent);
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+.project-card {
+  background: var(--card-bg-light);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+body.dark .project-card {
+  background: var(--card-bg-dark);
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  padding: 2rem 1rem;
+  opacity: 0.7;
+}
+
+@keyframes slideInFromTop {
+  0% { transform: translateY(-30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+</style> </head> <body> <header data-aos="fade-down"> <h1>Aditya Pathak</h1> <p>B.Tech CSE Student | Open Source Contributor | Aspiring Full Stack Developer</p> <button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button> </header> <section data-aos="fade-up"> <h2>About Me</h2> <p>Hello! I'm Aditya, a Computer Science undergraduate passionate about building software that solves real-world problems. I enjoy learning new technologies, participating in hackathons, and contributing to open source.</p> </section> <section data-aos="fade-up" data-aos-delay="100"> <h2>Skills</h2> <ul> <li>Languages: Python, JavaScript, C++</li> <li>Web Development: HTML, CSS, React, Flask</li> <li>Tools: Git, GitHub, VS Code</li> </ul> </section> <section data-aos="zoom-in-up"> <h2>Projects</h2> <div class="project-card" data-aos="flip-left"> <h3>🌦️ Weather App</h3> <p>A dynamic web application built using Flask and OpenWeatherMap API to display real-time weather data.</p> </div> <div class="project-card" data-aos="flip-left" data-aos-delay="100"> <h3>💼 Portfolio Website</h3> <p>This portfolio showcases my skills, projects, and interests. Built using HTML, CSS, and deployed on GitHub Pages.</p> </div> </section> <section data-aos="fade-up"> <h2>GitHub</h2> <p>Explore my work on <a href="https://github.com/pathakaditya8" target="_blank">GitHub @pathakaditya8</a>.</p> </section> <section data-aos="fade-up"> <h2>Contact</h2> <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p> <p>LinkedIn: <a href="https://linkedin.com/in/aditya-pathak" target="_blank">linkedin.com/in/aditya-pathak</a></p> </section> <footer data-aos="fade-up"> &copy; 2025 Aditya Pathak | All rights reserved. </footer> <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <script> AOS.init({ duration: 1000, once: true }); function toggleTheme() { document.body.classList.toggle("dark"); } </script> </body> </html>
